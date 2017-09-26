@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="784154" started-at="2017-09-26T19:11:16Z" finished-at="2017-09-26T19:24:20Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="784154" started-at="2017-09-26T19:11:16Z" finished-at="2017-09-26T19:24:20Z">
+      <class name="com.selenium.automationpractice.homepage.TC_01_Login_With_Valid_Credential">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.selenium.automationpractice.homepage.TC_01_Login_With_Valid_Credential@271053e1]" name="setUp" is-config="true" duration-ms="768586" started-at="2017-09-27T00:41:16Z" finished-at="2017-09-27T00:54:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyLoginWithInvalidCredentails()[pri:0, instance:com.selenium.automationpractice.homepage.TC_01_Login_With_Valid_Credential@271053e1]" name="verifyLoginWithInvalidCredentails" duration-ms="15468" started-at="2017-09-27T00:54:04Z" finished-at="2017-09-27T00:54:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginWithInvalidCredentails -->
+      </class> <!-- com.selenium.automationpractice.homepage.TC_01_Login_With_Valid_Credential -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
