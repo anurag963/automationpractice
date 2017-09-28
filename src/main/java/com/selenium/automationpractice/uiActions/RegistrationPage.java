@@ -87,18 +87,16 @@ public class RegistrationPage extends Testbase {
 	}
 	
 	
-	Homepage homepage;
+	
 	AuthenticationPage auth;
 	
 	public void registration() throws InterruptedException{
 		
-		homepage = new Homepage(driver);
-		homepage.clickOnSignInLink();
-		
 		auth= new AuthenticationPage(driver);
 		auth.createAnAccount();
+		System.out.println(driver);
 		
-		new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOf(titleMrPI));
+	//	new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOf(titleMrPI));
 		
 		titleMrPI.click();
 		firstNamePI.sendKeys("First Name");
@@ -106,7 +104,7 @@ public class RegistrationPage extends Testbase {
 		passwordPI.sendKeys("Password1");
 		
 		new Select(dobDaysPI).selectByValue("3");
-		new Select(dobmonthsPI).selectByValue("13");
+		new Select(dobmonthsPI).selectByIndex(5);
 		new Select(dobYearsPI).selectByValue("1980");
 		
 		
