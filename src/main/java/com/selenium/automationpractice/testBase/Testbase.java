@@ -16,8 +16,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -65,12 +63,12 @@ public class Testbase {
 	public void init() throws IOException
 	{
 		Testbase obj= new Testbase();	
-		obj.getBrowser("firefox");
+		obj.getBrowser("chrome");
 		obj.loadProperties();
 		String url= obj.propertiesData.getProperty("url");
 		System.out.println(url);
 		driver.get(url);
-	//	driver.manage().timeouts().implicitlyWait(70, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 	}
 	
@@ -80,7 +78,7 @@ public class Testbase {
 		if(browser.equalsIgnoreCase("chrome"))
 		{
 			System.out.println(System.getProperty("user.dir"));
-			System.setProperty("Webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/chromedriver.exe");		
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/chromedriver.exe");		
 			driver= new ChromeDriver();
 			
 		}
