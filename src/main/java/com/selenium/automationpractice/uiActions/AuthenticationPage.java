@@ -64,10 +64,13 @@ public class AuthenticationPage extends Testbase{
 	}
 	
 	public void createAnAccount(){
-		new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOf(emailAddressForAccountCreation));
-		emailAddressForAccountCreation.sendKeys("Test09272017@test.com");
-		createAnAccountButton.click();
+		homepage = new Homepage(driver);
+		homepage.clickOnSignInLink();
 		
+		//new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOf(emailAddressForAccountCreation));
+		emailAddressForAccountCreation.sendKeys("Test092720171@test.com");
+		createAnAccountButton.click();
+
 	}
 	
 	
