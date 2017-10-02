@@ -2,63 +2,19 @@ package com.selenium.automationpractice.testBase;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.lang.reflect.Method;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
-public class Testbase {
+public class Testbase extends TestbaseUtils {
 
-	public static WebDriver driver;
-	public String browser;
-	public String url;
-	public Properties propertiesData;
-	public File propFile;
-	public FileInputStream propFis;
-	
-	public static ExtentHtmlReporter htmlReporter;
-	public static ExtentReports extent;
-	public static ExtentTest test;
-	
-	
-	static{
-		Calendar calender= Calendar.getInstance();
-		SimpleDateFormat formater = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
-		extent = new ExtentReports();
-		
-	}
-	
-	
-	public void getResult(ITestResult result)
-	{
-		if(result.getStatus()==ITestResult.SUCCESS)
-		{
-			
-		}
-		else if(result.getStatus()==ITestResult.SKIP)
-		{
-			
-		}
-		else if(result.getStatus()==ITestResult.FAILURE)
-		{
-			
-		}
-		
-	}
-	
 	
 	public void init() throws IOException
 	{
@@ -109,28 +65,19 @@ public class Testbase {
 		
 	}
 	
-	public void getScreenshot(String imageName) throws IOException
-	{
-		if(imageName.isEmpty())
-		{
-			imageName="blank";
-		}
-		
-		File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String imageSavePath= System.getProperty("user.dir")+"/screenshots/";
-		
-		Calendar calender= Calendar.getInstance();
-		SimpleDateFormat formater = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
-		String actualImage= imageSavePath+imageName+formater.format(calender.getTime())+".png";
-		File desctFile= new File(actualImage);
-		
-		FileUtils.copyFile(image, desctFile);
-		
-		
-		
-	}
 	
-		
+	
+	public void afterMethod(ITestResult result) throws IOException {
+		getResult(result);
+	}
+
+
+	public void beforeMethod(Method result) {
+		//test = extent.startTest(result.getName());
+		//test.log(LogStatus.INFO, result.getName() + " test Started");
+	}
+
+
 	
 	
 //	@Test

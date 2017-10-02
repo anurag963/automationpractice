@@ -11,10 +11,13 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class ExcelManage {
+	
 
+	
 	public String[][] excelRead(String excelName, String sheetName) throws IOException{
 		
 		File file= new File(System.getProperty("user.dir")+"/testData/"+excelName+".xlsx");
@@ -50,7 +53,34 @@ public class ExcelManage {
 				while (cellIterator.hasNext())
 				{
 					Cell cell = cellIterator.next();
-					dataSet[j][k++] = cell.getStringCellValue();
+					switch (cell.getCellType()) {
+					case Cell.CELL_TYPE_NUMERIC:
+						System.out.print(k+",");
+						System.out.print(j+",");
+						dataSet[k][j++] = cell.getStringCellValue();
+						System.out.println(cell.getNumericCellValue());
+						break;
+					case Cell.CELL_TYPE_STRING:
+						System.out.print(k+",");
+						System.out.print(j+",");
+						dataSet[k][j++] = cell.getStringCellValue();
+						System.out.println(cell.getStringCellValue());
+						break;
+					case Cell.CELL_TYPE_BOOLEAN:
+						System.out.print(k+",");
+						System.out.print(j+",");
+						dataSet[k][j++] = cell.getStringCellValue();
+						System.out.println(cell.getStringCellValue());
+						break;
+					case Cell.CELL_TYPE_FORMULA:
+						System.out.print(k+",");
+						System.out.print(j+",");
+						dataSet[k][j++] = cell.getStringCellValue();
+						System.out.println(cell.getStringCellValue());
+						break;
+					}
+					
+					
 					
 				}
 			
@@ -63,6 +93,7 @@ public class ExcelManage {
 		
 	}
 	
+
 	
 	
 	@Test

@@ -90,7 +90,9 @@ public class RegistrationPage extends Testbase {
 	
 	AuthenticationPage auth;
 	
-	public void registration() throws InterruptedException{
+	public void registration(String fName, String lName,String password, String day, String month, 
+			String year, String company, String address1, String address2, String city, String state, 
+			String postcode,String country,String additionalInfo, String mobNo, String addressAlias  ){
 		
 		auth= new AuthenticationPage(driver);
 		auth.createAnAccount();
@@ -99,36 +101,38 @@ public class RegistrationPage extends Testbase {
 	//	new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOf(titleMrPI));
 		
 		titleMrPI.click();
-		firstNamePI.sendKeys("First Name");
-		lastNamePI.sendKeys("Last Name");
-		passwordPI.sendKeys("Password1");
+		firstNamePI.sendKeys(fName);
+		lastNamePI.sendKeys(lName);
+		passwordPI.sendKeys(password);
 		
-		new Select(dobDaysPI).selectByValue("3");
-		new Select(dobmonthsPI).selectByIndex(5);
-		new Select(dobYearsPI).selectByValue("1980");
+		new Select(dobDaysPI).selectByValue(day);
+		new Select(dobmonthsPI).selectByValue(month);
+		//new Select(dobmonthsPI).selectByIndex(5);
+		new Select(dobYearsPI).selectByValue(year);
 		
 		
-		firstNameYA.sendKeys("First Name");
-		lastnameYA.sendKeys("Last Name");
-		companyYA.sendKeys("ABC");
-		address1YA.sendKeys("Address 1");
-		address2YA.sendKeys("Address 2");
-		cityYA.sendKeys("City Test");
+		firstNameYA.sendKeys(fName);
+		lastnameYA.sendKeys(lName);
+		companyYA.sendKeys(company);
+		address1YA.sendKeys(address1);
+		address2YA.sendKeys(address2);
+		cityYA.sendKeys(city);
 		
-		new Select(stateYA).selectByVisibleText("Arizona");
+		new Select(stateYA).selectByVisibleText(state);
 		
-		postcodeYA.sendKeys("12123");
+		postcodeYA.sendKeys(postcode);
 		
-		new Select(stateYA).selectByValue("21");
+		//new Select(countryYA).selectByValue("21");
+		new Select(countryYA).selectByVisibleText(country);
 		
-		additionalInfoYA.sendKeys("Additional info is here");
-		mobileYA.sendKeys("1234567890");
-		addressaliasYA.sendKeys("My Test Address");
+		additionalInfoYA.sendKeys(additionalInfo);
+		mobileYA.sendKeys(mobNo);
+		addressaliasYA.sendKeys(addressAlias);
 		
 		registerButton.click();
 		
 		
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		
 	}
 	

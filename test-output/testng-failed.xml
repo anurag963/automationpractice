@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.selenium.automationpractice.homepage.TC_01_Login_With_Valid_Credential">
+      <class name="com.selenium.automationpractice.registration.TC_02_registration">
         <methods>
-          <include name="setUp"/>
-          <include name="verifyLoginWithInvalidCredentails"/>
+          <include name="verifyRegistration"/>
+          <include name="initializeExtentReport"/>
+          <include name="finishExtentReport"/>
         </methods>
-      </class> <!-- com.selenium.automationpractice.homepage.TC_01_Login_With_Valid_Credential -->
+      </class> <!-- com.selenium.automationpractice.registration.TC_02_registration -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

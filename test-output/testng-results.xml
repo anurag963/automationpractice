@@ -1,21 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="784154" started-at="2017-09-26T19:11:16Z" finished-at="2017-09-26T19:24:20Z">
+  <suite name="Default suite" duration-ms="1636" started-at="2017-10-02T11:20:03Z" finished-at="2017-10-02T11:20:05Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="784154" started-at="2017-09-26T19:11:16Z" finished-at="2017-09-26T19:24:20Z">
-      <class name="com.selenium.automationpractice.homepage.TC_01_Login_With_Valid_Credential">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.selenium.automationpractice.homepage.TC_01_Login_With_Valid_Credential@271053e1]" name="setUp" is-config="true" duration-ms="768586" started-at="2017-09-27T00:41:16Z" finished-at="2017-09-27T00:54:04Z">
+    <test name="Default test" duration-ms="1636" started-at="2017-10-02T11:20:03Z" finished-at="2017-10-02T11:20:05Z">
+      <class name="com.selenium.automationpractice.registration.TC_02_registration">
+        <test-method status="PASS" signature="initializeExtentReport()[pri:0, instance:com.selenium.automationpractice.registration.TC_02_registration@4cf777e8]" name="initializeExtentReport" is-config="true" duration-ms="455" started-at="2017-10-02T16:50:03Z" finished-at="2017-10-02T16:50:04Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyLoginWithInvalidCredentails()[pri:0, instance:com.selenium.automationpractice.homepage.TC_01_Login_With_Valid_Credential@271053e1]" name="verifyLoginWithInvalidCredentails" duration-ms="15468" started-at="2017-09-27T00:54:04Z" finished-at="2017-09-27T00:54:20Z">
+        </test-method> <!-- initializeExtentReport -->
+        <test-method status="SKIP" signature="verifyRegistration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.selenium.automationpractice.registration.TC_02_registration@4cf777e8]" name="verifyRegistration" duration-ms="0" started-at="2017-10-02T16:50:05Z" data-provider="regData" finished-at="2017-10-02T16:50:05Z">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[java.lang.IllegalStateException: Cannot get a text value from a numeric cell]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: java.lang.IllegalStateException: Cannot get a text value from a numeric cell
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:49)
+	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:111)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:509)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1293)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:1020)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1110)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.IllegalStateException: Cannot get a text value from a numeric cell
+	at org.apache.poi.xssf.usermodel.XSSFCell.typeMismatch(XSSFCell.java:845)
+	at org.apache.poi.xssf.usermodel.XSSFCell.getRichStringCellValue(XSSFCell.java:294)
+	at org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue(XSSFCell.java:246)
+	at com.selenium.automationpractice.excelManage.ExcelManage.excelRead(ExcelManage.java:60)
+	at com.selenium.automationpractice.testBase.TestbaseUtils.getData(TestbaseUtils.java:108)
+	at com.selenium.automationpractice.registration.TC_02_registration.regdata(TC_02_registration.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:55)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:45)
+	... 22 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLoginWithInvalidCredentails -->
-      </class> <!-- com.selenium.automationpractice.homepage.TC_01_Login_With_Valid_Credential -->
+        </test-method> <!-- verifyRegistration -->
+        <test-method status="PASS" signature="finishExtentReport()[pri:0, instance:com.selenium.automationpractice.registration.TC_02_registration@4cf777e8]" name="finishExtentReport" is-config="true" duration-ms="4" started-at="2017-10-02T16:50:05Z" finished-at="2017-10-02T16:50:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finishExtentReport -->
+      </class> <!-- com.selenium.automationpractice.registration.TC_02_registration -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
