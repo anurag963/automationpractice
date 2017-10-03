@@ -1,5 +1,7 @@
 package com.selenium.automationpractice.uiActions;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -90,12 +92,12 @@ public class RegistrationPage extends Testbase {
 	
 	AuthenticationPage auth;
 	
-	public void registration(String fName, String lName,String password, String day, String month, 
+	public void registration(String email,String fName, String lName,String password, String day, String month, 
 			String year, String company, String address1, String address2, String city, String state, 
-			String postcode,String country,String additionalInfo, String mobNo, String addressAlias  ){
+			String postcode,String country,String additionalInfo, String mobNo, String addressAlias  ) throws IOException{
 		
 		auth= new AuthenticationPage(driver);
-		auth.createAnAccount();
+		auth.createAnAccount(email);
 		System.out.println(driver);
 		
 	//	new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOf(titleMrPI));
@@ -128,7 +130,7 @@ public class RegistrationPage extends Testbase {
 		additionalInfoYA.sendKeys(additionalInfo);
 		mobileYA.sendKeys(mobNo);
 		addressaliasYA.sendKeys(addressAlias);
-		
+		getScreenshot("verifyRegistration");
 		registerButton.click();
 		
 		

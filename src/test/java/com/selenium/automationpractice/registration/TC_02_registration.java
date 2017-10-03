@@ -32,16 +32,17 @@ public class TC_02_registration extends Testbase {
 	}
 	
 	@Test(dataProvider="regData")	
-	public void verifyRegistration(String fName, String lName,String password, String day, String month, 
+	public void verifyRegistration(String email, String fName, String lName,String password, String day, String month, 
 			String year, String company, String address1, String address2, String city, String state, 
 			String postcode,String country,String additionalInfo, String mobNo, String addressAlias ) 
 	{
 		try{
 		test= extent.createTest("verifyLoginWithInvalidCredentails");
 		regPage = new RegistrationPage(driver);
-		regPage.registration(fName, lName, password, day, month, year, company, address1, address2, 
+		regPage.registration(email, fName, lName, password, day, month, year, company, address1, address2, 
 				city, state, postcode, country, additionalInfo, mobNo, addressAlias );
 		regPage.getScreenshot("verifyRegistration");
+		
 		}catch (AssertionError e) {
 			
 			try {
@@ -68,7 +69,7 @@ public class TC_02_registration extends Testbase {
 	@AfterMethod
 	public void endTest(){
 		
-		driver.close();
+		//driver.close();
 		
 	}
 	
