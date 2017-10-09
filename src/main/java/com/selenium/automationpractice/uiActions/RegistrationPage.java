@@ -102,37 +102,58 @@ public class RegistrationPage extends Testbase {
 		
 	//	new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOf(titleMrPI));
 		
+		test.info("Test info1 is here");
 		titleMrPI.click();
+		test.info("Selected on title radio button");
 		firstNamePI.sendKeys(fName);
+		test.info("Entered first name in text box of presonal info");
 		lastNamePI.sendKeys(lName);
+		test.info("Entered last name in text box of presonal info");
 		passwordPI.sendKeys(password);
+		test.info("Entered password");
 		
 		new Select(dobDaysPI).selectByValue(day);
+		test.info("Selected date");
 		new Select(dobmonthsPI).selectByValue(month);
 		//new Select(dobmonthsPI).selectByIndex(5);
+		test.info("Selected month");
 		new Select(dobYearsPI).selectByValue(year);
+		test.info("Selected year");
 		
 		
 		firstNameYA.sendKeys(fName);
+		test.info("Entered first name in text box of your address");
 		lastnameYA.sendKeys(lName);
+		test.info("Entered last name in text box of your address");
 		companyYA.sendKeys(company);
+		test.info("Entered Company name");
 		address1YA.sendKeys(address1);
+		test.info("Entered address1");
 		address2YA.sendKeys(address2);
+		test.info("Entered address2");
 		cityYA.sendKeys(city);
+		test.info("Entered city");
 		
 		new Select(stateYA).selectByVisibleText(state);
+		test.info("Selected state");
 		
 		postcodeYA.sendKeys(postcode);
+		test.info("Selected postcode");
 		
 		//new Select(countryYA).selectByValue("21");
 		new Select(countryYA).selectByVisibleText(country);
+		test.info("Selected country");
 		
 		additionalInfoYA.sendKeys(additionalInfo);
+		test.info("Entered additional info");
 		mobileYA.sendKeys(mobNo);
+		test.info("Entered mob no");
 		addressaliasYA.sendKeys(addressAlias);
+		test.info("Entered addressAlias");
 		getScreenshot("verifyRegistration");
-		registerButton.click();
 		
+		registerButton.click();
+		test.info("Clicked on regestration button");
 		
 		//Thread.sleep(3000);
 		

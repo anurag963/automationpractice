@@ -34,41 +34,49 @@ public class TC_02_registration extends Testbase {
 	@Test(dataProvider="regData")	
 	public void verifyRegistration(String email, String fName, String lName,String password, String day, String month, 
 			String year, String company, String address1, String address2, String city, String state, 
-			String postcode,String country,String additionalInfo, String mobNo, String addressAlias ) 
+			String postcode,String country,String additionalInfo, String mobNo, String addressAlias ) throws Exception 
 	{
 		try{
 		test= extent.createTest("verifyLoginWithInvalidCredentails");
+		test.info("Test info1 is here");
 		regPage = new RegistrationPage(driver);
 		regPage.registration(email, fName, lName, password, day, month, year, company, address1, address2, 
 				city, state, postcode, country, additionalInfo, mobNo, addressAlias );
 		regPage.getScreenshot("verifyRegistration");
+		test.info("Test info2 is here");
 		
-		}catch (AssertionError e) {
-			
-			try {
-				getScreenshot("verifyRegistration");
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
+		}catch (Exception e1) {
+				
 				e1.printStackTrace();
+				throw(e1);
 			}
-			Assert.assertTrue(false, "verifyRegistration");
-		} catch (Exception e) {
-			
-			try {
-				getScreenshot("verifyRegistration");
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			Assert.assertTrue(false, "verifyRegistration");
-		}
+					
 		
 		
 	}
 	
+//	@Test
+//	public void test1(){
+//		System.out.println("test 1 is running");
+//		test.info("Test info2 is here");
+//	}
+//	
+//	@Test
+//	public void test2(){
+//		System.out.println("test 2 is running");
+//		test.info("test 2 is running");
+//	}
+//	
+//	@Test
+//	public void test3(){
+//		System.out.println("test 3 is running");
+//		test.info("test 3 is running");
+//	}
+	
 	@AfterMethod
-	public void endTest(){
+	public void endTest(ITestResult result) throws IOException{
 		
+		getResult(result);
 		//driver.close();
 		
 	}

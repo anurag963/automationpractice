@@ -19,6 +19,7 @@ public class Homepage extends Testbase{
 	}
 	public void clickOnSignInLink(){
 		signIn.click();
+		test.info("Clicked on Sign In link");
 		
 	}
 	

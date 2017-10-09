@@ -5,7 +5,9 @@
     <classes>
       <class name="com.selenium.automationpractice.registration.TC_02_registration">
         <methods>
-          <include name="verifyRegistration"/>
+          <include name="setUp"/>
+          <include name="endTest"/>
+          <include name="verifyRegistration" invocation-numbers="0"/>
           <include name="initializeExtentReport"/>
           <include name="finishExtentReport"/>
         </methods>

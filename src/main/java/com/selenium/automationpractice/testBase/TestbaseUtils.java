@@ -59,6 +59,7 @@ public class TestbaseUtils {
 		
 		}
 	
+	
 	public void getResult(ITestResult result) throws IOException
 	{
 		if(result.getStatus()==ITestResult.SUCCESS)
@@ -75,6 +76,7 @@ public class TestbaseUtils {
 		else if(result.getStatus()==ITestResult.FAILURE)
 		{
 			test.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+"Testcase Skipped", ExtentColor.YELLOW));
+			test.fail("Test case failed");
 			test.skip(result.getThrowable());
 		}
 		

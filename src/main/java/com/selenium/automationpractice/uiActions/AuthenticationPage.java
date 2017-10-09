@@ -45,13 +45,16 @@ public class AuthenticationPage extends Testbase{
 		
 		homepage= new Homepage(driver);
 		homepage.clickOnSignInLink();
+		test.info("Clicked on Sign In link");
 		//Thread.sleep(5000);
 		new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(loginEmail));
 		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 		//log.info("Clicked on SignIn and Object is "+signIn.toString());
 		loginEmail.sendKeys(emailAddress);
+		test.info("Entered email address");
 		loginPass.sendKeys(password);
+		test.info("Entered password");
 		submitLoginBtn.click();
 		//log.info("Clicked on Submit button and Object is "+submitLoginBtn.toString());
 				
@@ -66,10 +69,13 @@ public class AuthenticationPage extends Testbase{
 	public void createAnAccount(String email){
 		homepage = new Homepage(driver);
 		homepage.clickOnSignInLink();
+		test.info("Clicked on Sign In link");
 		
 		//new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOf(emailAddressForAccountCreation));
 		emailAddressForAccountCreation.sendKeys(email);
+		test.info("Entered email address");
 		createAnAccountButton.click();
+		test.info("Clicked on create an account button");
 
 	}
 	
