@@ -28,7 +28,7 @@ public class ExcelManage {
 			//logger.info("Creating excel object:-"+excellocation);
 			String dataSets[][] = null;
 			
-			FileInputStream file = new FileInputStream(new File(System.getProperty("user.dir")+"/testData/"+excelName+".xlsx"));
+			FileInputStream file = new FileInputStream(new File(System.getProperty("user.dir")+"/src/test/resources/testdata/"+excelName+".xlsx"));
 
 			// Create Workbook instance holding reference to .xlsx file
 			XSSFWorkbook workbook = new XSSFWorkbook(file);

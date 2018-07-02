@@ -1,0 +1,13 @@
+<suit name="Test Suit 1">
+<test name="Test name">
+<classes>
+<class name="com.selenium.automationpractice.registration.TC_02_registration">
+<methods>
+<include name="verifyRegistration"/>
+<include name="test1"/>
+<include name="test2"/>
+</methods>
+</class>
+</classes>
+</test>
+</suit>
